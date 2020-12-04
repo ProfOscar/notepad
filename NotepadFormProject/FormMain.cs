@@ -16,5 +16,10 @@ namespace NotepadFormProject
         {
             InitializeComponent();
         }
+
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+            this.Text += " - " + this.Tag;
+        }
     }
 }
