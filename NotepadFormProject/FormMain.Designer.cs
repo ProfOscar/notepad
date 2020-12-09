@@ -32,12 +32,13 @@
             this.menuStripMain = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuovoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuovaFinestraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.apriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salvaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salvaconnomeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.stampaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.impostapaginaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stampaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.esciToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,7 +61,7 @@
             this.informazionisuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStripMain = new System.Windows.Forms.StatusStrip();
             this.rtbMain = new System.Windows.Forms.RichTextBox();
-            this.nuovaFinestraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveFileDialogMain = new System.Windows.Forms.SaveFileDialog();
             this.menuStripMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -103,6 +104,14 @@
             this.nuovoToolStripMenuItem.Size = new System.Drawing.Size(267, 22);
             this.nuovoToolStripMenuItem.Text = "&Nuovo";
             // 
+            // nuovaFinestraToolStripMenuItem
+            // 
+            this.nuovaFinestraToolStripMenuItem.Name = "nuovaFinestraToolStripMenuItem";
+            this.nuovaFinestraToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.N)));
+            this.nuovaFinestraToolStripMenuItem.Size = new System.Drawing.Size(267, 22);
+            this.nuovaFinestraToolStripMenuItem.Text = "&Nuova finestra";
+            // 
             // apriToolStripMenuItem
             // 
             this.apriToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("apriToolStripMenuItem.Image")));
@@ -120,6 +129,7 @@
             this.salvaToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
             this.salvaToolStripMenuItem.Size = new System.Drawing.Size(267, 22);
             this.salvaToolStripMenuItem.Text = "&Salva";
+            this.salvaToolStripMenuItem.Click += new System.EventHandler(this.salvaToolStripMenuItem_Click);
             // 
             // salvaconnomeToolStripMenuItem
             // 
@@ -128,11 +138,19 @@
             | System.Windows.Forms.Keys.S)));
             this.salvaconnomeToolStripMenuItem.Size = new System.Drawing.Size(267, 22);
             this.salvaconnomeToolStripMenuItem.Text = "&Salva con nome...";
+            this.salvaconnomeToolStripMenuItem.Click += new System.EventHandler(this.salvaconnomeToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(264, 6);
+            // 
+            // impostapaginaToolStripMenuItem
+            // 
+            this.impostapaginaToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.impostapaginaToolStripMenuItem.Name = "impostapaginaToolStripMenuItem";
+            this.impostapaginaToolStripMenuItem.Size = new System.Drawing.Size(267, 22);
+            this.impostapaginaToolStripMenuItem.Text = "I&mposta pagina...";
             // 
             // stampaToolStripMenuItem
             // 
@@ -142,13 +160,6 @@
             this.stampaToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
             this.stampaToolStripMenuItem.Size = new System.Drawing.Size(267, 22);
             this.stampaToolStripMenuItem.Text = "S&tampa...";
-            // 
-            // impostapaginaToolStripMenuItem
-            // 
-            this.impostapaginaToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.impostapaginaToolStripMenuItem.Name = "impostapaginaToolStripMenuItem";
-            this.impostapaginaToolStripMenuItem.Size = new System.Drawing.Size(267, 22);
-            this.impostapaginaToolStripMenuItem.Text = "I&mposta pagina...";
             // 
             // toolStripSeparator2
             // 
@@ -314,13 +325,10 @@
             this.rtbMain.TabIndex = 2;
             this.rtbMain.Text = "";
             // 
-            // nuovaFinestraToolStripMenuItem
+            // saveFileDialogMain
             // 
-            this.nuovaFinestraToolStripMenuItem.Name = "nuovaFinestraToolStripMenuItem";
-            this.nuovaFinestraToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.N)));
-            this.nuovaFinestraToolStripMenuItem.Size = new System.Drawing.Size(267, 22);
-            this.nuovaFinestraToolStripMenuItem.Text = "&Nuova finestra";
+            this.saveFileDialogMain.FileName = "*.txt";
+            this.saveFileDialogMain.Filter = "Documenti di testo|*.txt|Tutti i file|*.*";
             // 
             // FormMain
             // 
@@ -377,6 +385,7 @@
         private System.Windows.Forms.StatusStrip statusStripMain;
         private System.Windows.Forms.RichTextBox rtbMain;
         private System.Windows.Forms.ToolStripMenuItem nuovaFinestraToolStripMenuItem;
+        private System.Windows.Forms.SaveFileDialog saveFileDialogMain;
     }
 }
 
