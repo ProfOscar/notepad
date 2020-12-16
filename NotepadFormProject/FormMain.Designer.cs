@@ -62,6 +62,7 @@
             this.statusStripMain = new System.Windows.Forms.StatusStrip();
             this.rtbMain = new System.Windows.Forms.RichTextBox();
             this.saveFileDialogMain = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialogMain = new System.Windows.Forms.OpenFileDialog();
             this.menuStripMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -103,6 +104,7 @@
             this.nuovoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
             this.nuovoToolStripMenuItem.Size = new System.Drawing.Size(267, 22);
             this.nuovoToolStripMenuItem.Text = "&Nuovo";
+            this.nuovoToolStripMenuItem.Click += new System.EventHandler(this.nuovoToolStripMenuItem_Click);
             // 
             // nuovaFinestraToolStripMenuItem
             // 
@@ -120,6 +122,7 @@
             this.apriToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F12)));
             this.apriToolStripMenuItem.Size = new System.Drawing.Size(267, 22);
             this.apriToolStripMenuItem.Text = "&Apri...";
+            this.apriToolStripMenuItem.Click += new System.EventHandler(this.apriToolStripMenuItem_Click);
             // 
             // salvaToolStripMenuItem
             // 
@@ -330,6 +333,11 @@
             this.saveFileDialogMain.FileName = "*.txt";
             this.saveFileDialogMain.Filter = "Documenti di testo|*.txt|Tutti i file|*.*";
             // 
+            // openFileDialogMain
+            // 
+            this.openFileDialogMain.FileName = "*.txt";
+            this.openFileDialogMain.Filter = "Documenti di testo|*.txt|Tutti i file|*.*";
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -343,7 +351,6 @@
             this.Tag = "Blocco note di Windows";
             this.Text = "Senza nome";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
-            this.Load += new System.EventHandler(this.FormMain_Load);
             this.menuStripMain.ResumeLayout(false);
             this.menuStripMain.PerformLayout();
             this.ResumeLayout(false);
@@ -386,6 +393,7 @@
         private System.Windows.Forms.RichTextBox rtbMain;
         private System.Windows.Forms.ToolStripMenuItem nuovaFinestraToolStripMenuItem;
         private System.Windows.Forms.SaveFileDialog saveFileDialogMain;
+        private System.Windows.Forms.OpenFileDialog openFileDialogMain;
     }
 }
 
