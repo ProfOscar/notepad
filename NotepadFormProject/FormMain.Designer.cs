@@ -63,6 +63,7 @@
             this.rtbMain = new System.Windows.Forms.RichTextBox();
             this.saveFileDialogMain = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialogMain = new System.Windows.Forms.OpenFileDialog();
+            this.pageSetupDialogMain = new System.Windows.Forms.PageSetupDialog();
             this.menuStripMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -154,6 +155,7 @@
             this.impostapaginaToolStripMenuItem.Name = "impostapaginaToolStripMenuItem";
             this.impostapaginaToolStripMenuItem.Size = new System.Drawing.Size(267, 22);
             this.impostapaginaToolStripMenuItem.Text = "I&mposta pagina...";
+            this.impostapaginaToolStripMenuItem.Click += new System.EventHandler(this.impostapaginaToolStripMenuItem_Click);
             // 
             // stampaToolStripMenuItem
             // 
@@ -338,6 +340,10 @@
             this.openFileDialogMain.FileName = "*.txt";
             this.openFileDialogMain.Filter = "Documenti di testo|*.txt|Tutti i file|*.*";
             // 
+            // pageSetupDialogMain
+            // 
+            this.pageSetupDialogMain.EnableMetric = true;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -394,6 +400,7 @@
         private System.Windows.Forms.ToolStripMenuItem nuovaFinestraToolStripMenuItem;
         private System.Windows.Forms.SaveFileDialog saveFileDialogMain;
         private System.Windows.Forms.OpenFileDialog openFileDialogMain;
+        private System.Windows.Forms.PageSetupDialog pageSetupDialogMain;
     }
 }
 

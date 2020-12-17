@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing.Printing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -13,12 +14,17 @@ namespace NotepadFormProject
         string filePath;
         string savedContent;
 
+        PrinterSettings printerSettings;
+        PageSettings pageSettings;
+
         #endregion
 
         #region Form Constructor and Events
 
         public FormMain()
         {
+            printerSettings = new PrinterSettings();
+            pageSettings = new PageSettings(printerSettings);
             InitializeComponent();
             this.initializeVariables();
         }
@@ -136,6 +142,15 @@ namespace NotepadFormProject
             }
         }
 
+        private void impostapaginaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pageSetupDialogMain.PageSettings = this.pageSettings;
+            if (pageSetupDialogMain.ShowDialog() == DialogResult.OK)
+            {
+                this.pageSettings = pageSetupDialogMain.PageSettings;
+            }
+        }
+
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -202,6 +217,5 @@ namespace NotepadFormProject
         }
 
         #endregion
-
     }
 }
