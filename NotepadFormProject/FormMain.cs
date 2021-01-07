@@ -14,8 +14,8 @@ namespace NotepadFormProject
         string filePath;
         string savedContent;
 
-        PrinterSettings printerSettings;
-        PageSettings pageSettings;
+        // PrinterSettings printerSettings;
+        // PageSettings pageSettings;
 
         #endregion
 
@@ -23,9 +23,11 @@ namespace NotepadFormProject
 
         public FormMain()
         {
-            printerSettings = new PrinterSettings();
-            pageSettings = new PageSettings(printerSettings);
+            // printerSettings = new PrinterSettings();
+            // pageSettings = new PageSettings(printerSettings);
             InitializeComponent();
+            pageSetupDialogMain.Document = this.printDocumentMain;
+            printDialogMain.Document = this.printDocumentMain;
             this.initializeVariables();
         }
 
@@ -144,10 +146,21 @@ namespace NotepadFormProject
 
         private void impostapaginaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            pageSetupDialogMain.PageSettings = this.pageSettings;
-            if (pageSetupDialogMain.ShowDialog() == DialogResult.OK)
+            //pageSetupDialogMain.PageSettings = this.pageSettings;
+            //if (pageSetupDialogMain.ShowDialog() == DialogResult.OK)
+            //{
+            //    this.pageSettings = pageSetupDialogMain.PageSettings;
+            //}
+            pageSetupDialogMain.ShowDialog();
+        }
+
+        private void stampaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            printDocumentMain.DocumentName = this.fileName;
+            if (printDialogMain.ShowDialog() == DialogResult.OK)
             {
-                this.pageSettings = pageSetupDialogMain.PageSettings;
+                //printDocumentMain.Print();
+                
             }
         }
 
@@ -217,5 +230,6 @@ namespace NotepadFormProject
         }
 
         #endregion
+
     }
 }

@@ -64,6 +64,8 @@
             this.saveFileDialogMain = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialogMain = new System.Windows.Forms.OpenFileDialog();
             this.pageSetupDialogMain = new System.Windows.Forms.PageSetupDialog();
+            this.printDocumentMain = new System.Drawing.Printing.PrintDocument();
+            this.printDialogMain = new System.Windows.Forms.PrintDialog();
             this.menuStripMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -165,6 +167,7 @@
             this.stampaToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
             this.stampaToolStripMenuItem.Size = new System.Drawing.Size(267, 22);
             this.stampaToolStripMenuItem.Text = "S&tampa...";
+            this.stampaToolStripMenuItem.Click += new System.EventHandler(this.stampaToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
@@ -342,7 +345,13 @@
             // 
             // pageSetupDialogMain
             // 
+            this.pageSetupDialogMain.Document = this.printDocumentMain;
             this.pageSetupDialogMain.EnableMetric = true;
+            // 
+            // printDialogMain
+            // 
+            this.printDialogMain.Document = this.printDocumentMain;
+            this.printDialogMain.UseEXDialog = true;
             // 
             // FormMain
             // 
@@ -401,6 +410,8 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialogMain;
         private System.Windows.Forms.OpenFileDialog openFileDialogMain;
         private System.Windows.Forms.PageSetupDialog pageSetupDialogMain;
+        private System.Drawing.Printing.PrintDocument printDocumentMain;
+        private System.Windows.Forms.PrintDialog printDialogMain;
     }
 }
 
