@@ -348,6 +348,10 @@
             this.pageSetupDialogMain.Document = this.printDocumentMain;
             this.pageSetupDialogMain.EnableMetric = true;
             // 
+            // printDocumentMain
+            // 
+            this.printDocumentMain.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocumentMain_PrintPage);
+            // 
             // printDialogMain
             // 
             this.printDialogMain.Document = this.printDocumentMain;

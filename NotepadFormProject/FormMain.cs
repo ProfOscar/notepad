@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Drawing.Printing;
 using System.IO;
 using System.Windows.Forms;
@@ -159,9 +160,16 @@ namespace NotepadFormProject
             printDocumentMain.DocumentName = this.fileName;
             if (printDialogMain.ShowDialog() == DialogResult.OK)
             {
-                //printDocumentMain.Print();
+                printDocumentMain.Print();
                 
             }
+        }
+
+        private void printDocumentMain_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            string str = rtbMain.Text;
+            Font font = rtbMain.Font;
+            e.Graphics.DrawString(str, font, new SolidBrush(System.Drawing.Color.Black), e.MarginBounds.X, e.MarginBounds.Y);
         }
 
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)
