@@ -32,6 +32,11 @@ namespace NotepadFormProject
             this.initializeVariables();
         }
 
+        private void FormMain_Activated(object sender, EventArgs e)
+        {
+            incollaToolStripMenuItem.Enabled = Clipboard.ContainsText();
+        }
+
         private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult response = checkIfSave();
@@ -52,6 +57,18 @@ namespace NotepadFormProject
                     saveDocument(saveFileDialogMain.FileName);
                 }
             }
+        }
+
+        private void rtbMain_TextChanged(object sender, EventArgs e)
+        {
+            annullaToolStripMenuItem.Enabled = true;
+        }
+
+        private void rtbMain_SelectionChanged(object sender, EventArgs e)
+        {
+            bool enableButtons = rtbMain.SelectedText.Length > 0;
+            copiaToolStripMenuItem.Enabled = enableButtons;
+            tagliaToolStripMenuItem.Enabled = enableButtons;
         }
 
         #endregion
@@ -112,6 +129,7 @@ namespace NotepadFormProject
                     this.savedContent = rtbMain.Text;
                     this.fileName = getFileNameFromPath(this.filePath);
                     this.setFormTitle();
+                    annullaToolStripMenuItem.Enabled = false;
                 }
                 catch (Exception)
                 {
@@ -177,12 +195,25 @@ namespace NotepadFormProject
             this.Close();
         }
 
+        private void annullaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (rtbMain.CanUndo)
+            {
+                rtbMain.Undo();
+            }
+            else
+            {
+                rtbMain.Redo();
+            }
+        }
+
         #endregion
 
         #region Custom Functions
 
         private void initializeVariables()
         {
+            annullaToolStripMenuItem.Enabled = false;
             this.fileName = "Senza nome";
             this.filePath = "";
             this.savedContent = "";
