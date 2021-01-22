@@ -201,10 +201,35 @@ namespace NotepadFormProject
             {
                 rtbMain.Undo();
             }
-            else
+        }
+
+        private void ripristinaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (rtbMain.CanRedo)
             {
                 rtbMain.Redo();
             }
+
+        }
+
+        private void tagliaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rtbMain.Cut();
+        }
+
+        private void copiaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rtbMain.Copy();
+        }
+
+        private void incollaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rtbMain.Paste();
+        }
+
+        private void selezionatuttoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rtbMain.SelectAll();
         }
 
         #endregion
@@ -269,6 +294,5 @@ namespace NotepadFormProject
         }
 
         #endregion
-
     }
 }
