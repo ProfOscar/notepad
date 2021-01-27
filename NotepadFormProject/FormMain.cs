@@ -69,6 +69,7 @@ namespace NotepadFormProject
             bool enableButtons = rtbMain.SelectedText.Length > 0;
             copiaToolStripMenuItem.Enabled = enableButtons;
             tagliaToolStripMenuItem.Enabled = enableButtons;
+            eliminaToolStripMenuItem.Enabled = enableButtons;
         }
 
         #endregion
@@ -227,9 +228,26 @@ namespace NotepadFormProject
             rtbMain.Paste();
         }
 
+        private void eliminaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rtbMain.SelectedText = "";
+        }
+
         private void selezionatuttoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             rtbMain.SelectAll();
+        }
+
+        private void oraDataToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DateTime now = DateTime.Now;
+            rtbMain.SelectedText = now.ToString("t") + " " + now.ToString("d");
+        }
+
+        private void acapoautomaticoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rtbMain.WordWrap = acapoautomaticoToolStripMenuItem.Checked;
+            vaiAToolStripMenuItem.Enabled = !acapoautomaticoToolStripMenuItem.Checked;
         }
 
         #endregion
