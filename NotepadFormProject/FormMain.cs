@@ -312,5 +312,14 @@ namespace NotepadFormProject
         }
 
         #endregion
+
+        private void vaiAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormVaiAllaRiga formVaiAllaRiga = new FormVaiAllaRiga();
+            if (formVaiAllaRiga.ShowDialog() == DialogResult.OK)
+            {
+                rtbMain.SelectionStart = rtbMain.GetFirstCharIndexFromLine(formVaiAllaRiga.NumeroRiga - 1);
+            }
+        }
     }
 }

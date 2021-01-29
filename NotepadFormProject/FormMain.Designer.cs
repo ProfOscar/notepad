@@ -48,8 +48,12 @@
             this.tagliaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.copiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.incollaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.vaiAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.selezionatuttoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.oraDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.formatoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acapoautomaticoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.carattereToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,10 +70,6 @@
             this.pageSetupDialogMain = new System.Windows.Forms.PageSetupDialog();
             this.printDocumentMain = new System.Drawing.Printing.PrintDocument();
             this.printDialogMain = new System.Windows.Forms.PrintDialog();
-            this.eliminaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.vaiAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.oraDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -259,6 +259,29 @@
             this.incollaToolStripMenuItem.Text = "I&ncolla";
             this.incollaToolStripMenuItem.Click += new System.EventHandler(this.incollaToolStripMenuItem_Click);
             // 
+            // eliminaToolStripMenuItem
+            // 
+            this.eliminaToolStripMenuItem.Enabled = false;
+            this.eliminaToolStripMenuItem.Name = "eliminaToolStripMenuItem";
+            this.eliminaToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Delete;
+            this.eliminaToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.eliminaToolStripMenuItem.Text = "E&limina";
+            this.eliminaToolStripMenuItem.Click += new System.EventHandler(this.eliminaToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(199, 6);
+            // 
+            // vaiAToolStripMenuItem
+            // 
+            this.vaiAToolStripMenuItem.Enabled = false;
+            this.vaiAToolStripMenuItem.Name = "vaiAToolStripMenuItem";
+            this.vaiAToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.G)));
+            this.vaiAToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.vaiAToolStripMenuItem.Text = "&Vai a...";
+            this.vaiAToolStripMenuItem.Click += new System.EventHandler(this.vaiAToolStripMenuItem_Click);
+            // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
@@ -271,6 +294,14 @@
             this.selezionatuttoToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
             this.selezionatuttoToolStripMenuItem.Text = "Seleziona &tutto";
             this.selezionatuttoToolStripMenuItem.Click += new System.EventHandler(this.selezionatuttoToolStripMenuItem_Click);
+            // 
+            // oraDataToolStripMenuItem
+            // 
+            this.oraDataToolStripMenuItem.Name = "oraDataToolStripMenuItem";
+            this.oraDataToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
+            this.oraDataToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.oraDataToolStripMenuItem.Text = "Ora/&Data";
+            this.oraDataToolStripMenuItem.Click += new System.EventHandler(this.oraDataToolStripMenuItem_Click);
             // 
             // formatoToolStripMenuItem
             // 
@@ -287,14 +318,14 @@
             this.acapoautomaticoToolStripMenuItem.CheckOnClick = true;
             this.acapoautomaticoToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.acapoautomaticoToolStripMenuItem.Name = "acapoautomaticoToolStripMenuItem";
-            this.acapoautomaticoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.acapoautomaticoToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.acapoautomaticoToolStripMenuItem.Text = "A capo a&utomatico";
             this.acapoautomaticoToolStripMenuItem.Click += new System.EventHandler(this.acapoautomaticoToolStripMenuItem_Click);
             // 
             // carattereToolStripMenuItem
             // 
             this.carattereToolStripMenuItem.Name = "carattereToolStripMenuItem";
-            this.carattereToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.carattereToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.carattereToolStripMenuItem.Text = "Cara&ttere...";
             // 
             // ToolStripMenuItem
@@ -381,36 +412,6 @@
             // 
             this.printDialogMain.Document = this.printDocumentMain;
             this.printDialogMain.UseEXDialog = true;
-            // 
-            // eliminaToolStripMenuItem
-            // 
-            this.eliminaToolStripMenuItem.Enabled = false;
-            this.eliminaToolStripMenuItem.Name = "eliminaToolStripMenuItem";
-            this.eliminaToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Delete;
-            this.eliminaToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
-            this.eliminaToolStripMenuItem.Text = "E&limina";
-            this.eliminaToolStripMenuItem.Click += new System.EventHandler(this.eliminaToolStripMenuItem_Click);
-            // 
-            // vaiAToolStripMenuItem
-            // 
-            this.vaiAToolStripMenuItem.Enabled = false;
-            this.vaiAToolStripMenuItem.Name = "vaiAToolStripMenuItem";
-            this.vaiAToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.G)));
-            this.vaiAToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
-            this.vaiAToolStripMenuItem.Text = "&Vai a...";
-            // 
-            // toolStripSeparator6
-            // 
-            this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(199, 6);
-            // 
-            // oraDataToolStripMenuItem
-            // 
-            this.oraDataToolStripMenuItem.Name = "oraDataToolStripMenuItem";
-            this.oraDataToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
-            this.oraDataToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
-            this.oraDataToolStripMenuItem.Text = "Ora/&Data";
-            this.oraDataToolStripMenuItem.Click += new System.EventHandler(this.oraDataToolStripMenuItem_Click);
             // 
             // FormMain
             // 
