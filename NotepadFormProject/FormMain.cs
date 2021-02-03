@@ -62,6 +62,10 @@ namespace NotepadFormProject
         private void rtbMain_TextChanged(object sender, EventArgs e)
         {
             annullaToolStripMenuItem.Enabled = true;
+            bool enableButtons = rtbMain.Text.Length > 0;
+            trovaToolStripMenuItem.Enabled = enableButtons;
+            trovaSuccessivoToolStripMenuItem.Enabled = enableButtons;
+            trovaPrecedenteToolStripMenuItem.Enabled = enableButtons;
         }
 
         private void rtbMain_SelectionChanged(object sender, EventArgs e)
@@ -318,7 +322,15 @@ namespace NotepadFormProject
             FormVaiAllaRiga formVaiAllaRiga = new FormVaiAllaRiga();
             if (formVaiAllaRiga.ShowDialog() == DialogResult.OK)
             {
-                rtbMain.SelectionStart = rtbMain.GetFirstCharIndexFromLine(formVaiAllaRiga.NumeroRiga - 1);
+                if (formVaiAllaRiga.NumeroRiga > rtbMain.Lines.Length)
+                {
+                    MessageBox.Show("Numero di riga maggiore del numero di righe totale", "Blocco note. Vai alla riga");
+                }
+                else
+                {
+                    rtbMain.SelectionLength = 0;
+                    rtbMain.SelectionStart = rtbMain.GetFirstCharIndexFromLine(formVaiAllaRiga.NumeroRiga - 1);
+                }
             }
         }
     }
