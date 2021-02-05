@@ -71,6 +71,7 @@
             this.btnAnnulla.TabIndex = 3;
             this.btnAnnulla.Text = "Annulla";
             this.btnAnnulla.UseVisualStyleBackColor = true;
+            this.btnAnnulla.Click += new System.EventHandler(this.btnAnnulla_Click);
             // 
             // chkUpLow
             // 
@@ -106,6 +107,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FormBaseTrovaSostituisci";
             this.Text = "FormBaseTrovaSostituisci";
+            this.TopMost = true;
             this.ResumeLayout(false);
             this.PerformLayout();
 

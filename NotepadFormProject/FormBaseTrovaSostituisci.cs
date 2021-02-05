@@ -16,5 +16,10 @@ namespace NotepadFormProject
         {
             InitializeComponent();
         }
+
+        private void btnAnnulla_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
