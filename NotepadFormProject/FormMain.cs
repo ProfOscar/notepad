@@ -237,6 +237,35 @@ namespace NotepadFormProject
             rtbMain.SelectedText = "";
         }
 
+        private void trovaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormTrova ft = new FormTrova();
+            ft.ShowDialog();
+        }
+
+        private void sostituisciToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormSostituisci fs = new FormSostituisci();
+            fs.ShowDialog();
+        }
+
+        private void vaiAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormVaiAllaRiga formVaiAllaRiga = new FormVaiAllaRiga();
+            if (formVaiAllaRiga.ShowDialog() == DialogResult.OK)
+            {
+                if (formVaiAllaRiga.NumeroRiga > rtbMain.Lines.Length)
+                {
+                    MessageBox.Show("Numero di riga maggiore del numero di righe totale", "Blocco note. Vai alla riga");
+                }
+                else
+                {
+                    rtbMain.SelectionLength = 0;
+                    rtbMain.SelectionStart = rtbMain.GetFirstCharIndexFromLine(formVaiAllaRiga.NumeroRiga - 1);
+                }
+            }
+        }
+
         private void selezionatuttoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             rtbMain.SelectAll();
@@ -316,22 +345,5 @@ namespace NotepadFormProject
         }
 
         #endregion
-
-        private void vaiAToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormVaiAllaRiga formVaiAllaRiga = new FormVaiAllaRiga();
-            if (formVaiAllaRiga.ShowDialog() == DialogResult.OK)
-            {
-                if (formVaiAllaRiga.NumeroRiga > rtbMain.Lines.Length)
-                {
-                    MessageBox.Show("Numero di riga maggiore del numero di righe totale", "Blocco note. Vai alla riga");
-                }
-                else
-                {
-                    rtbMain.SelectionLength = 0;
-                    rtbMain.SelectionStart = rtbMain.GetFirstCharIndexFromLine(formVaiAllaRiga.NumeroRiga - 1);
-                }
-            }
-        }
     }
 }
