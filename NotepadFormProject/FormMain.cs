@@ -30,6 +30,7 @@ namespace NotepadFormProject
             pageSetupDialogMain.Document = this.printDocumentMain;
             printDialogMain.Document = this.printDocumentMain;
             this.initializeVariables();
+            FindSubClass.Target = rtbMain;
         }
 
         private void FormMain_Activated(object sender, EventArgs e)
