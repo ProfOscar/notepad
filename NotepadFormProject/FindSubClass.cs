@@ -17,30 +17,36 @@ namespace NotepadFormProject
         {
             public static string textToFind = "";
             public static string subText = "";
-            public static bool isDown = true;
+            public static bool isUp = false;
             public static bool isCaseSensitive = false;
-            public static bool isTextAround = false;
+            public static bool isWholeWord = false;
         }
 
         public static int Find()
         {
-            RichTextBoxFinds options = 0;
-            if (!Parameters.isDown)
+            RichTextBoxFinds options = RichTextBoxFinds.None;
+            int start = 0;
+            int end = -1;
+            if (Parameters.isUp)
             {
-                options &= RichTextBoxFinds.Reverse;
+                options |= RichTextBoxFinds.Reverse;
+                end = Target.SelectionStart;
+                if (end == 0) return -1; // we are at the beginning of text
+            }
+            else
+            {
+                start = Target.SelectionStart + Target.SelectionLength;
+                if (start == Target.TextLength) return -1; // we are at the end of text
             }
             if (Parameters.isCaseSensitive)
             {
-                options &= RichTextBoxFinds.MatchCase;
+                options |= RichTextBoxFinds.MatchCase;
             }
-            //if (Parameters.isTextAround)
-            //{
-            //    options &= RichTextBoxFinds.WholeWord;
-            //}
-            Target.Focus(); // TODO: DA CAMBIARE, COSì NON CI PIACE!
-            return Target.Find(Parameters.textToFind, 
-                Target.SelectionStart + target.SelectionLength,
-                options);
+            if (Parameters.isWholeWord)
+            {
+                options |= RichTextBoxFinds.WholeWord;
+            }
+            return Target.Find(Parameters.textToFind, start, end, options);
         }
     }
 }

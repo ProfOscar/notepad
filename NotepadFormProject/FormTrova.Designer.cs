@@ -36,11 +36,11 @@
             // 
             // chkUpLow
             // 
-            this.chkUpLow.Location = new System.Drawing.Point(12, 105);
+            this.chkCaseSensitive.Location = new System.Drawing.Point(12, 105);
             // 
             // chkTextAround
             // 
-            this.chkTextAround.Location = new System.Drawing.Point(12, 150);
+            this.chkWholeWord.Location = new System.Drawing.Point(12, 150);
             // 
             // gbDirection
             // 
@@ -74,6 +74,7 @@
             this.rbUp.TabIndex = 0;
             this.rbUp.Text = "Su";
             this.rbUp.UseVisualStyleBackColor = true;
+            this.rbUp.CheckedChanged += new System.EventHandler(this.rbUp_CheckedChanged);
             // 
             // FormTrova
             // 
@@ -82,9 +83,10 @@
             this.Controls.Add(this.gbDirection);
             this.Name = "FormTrova";
             this.Text = "Trova";
+            this.Controls.SetChildIndex(this.txtFind, 0);
             this.Controls.SetChildIndex(this.btnAnnulla, 0);
-            this.Controls.SetChildIndex(this.chkUpLow, 0);
-            this.Controls.SetChildIndex(this.chkTextAround, 0);
+            this.Controls.SetChildIndex(this.chkCaseSensitive, 0);
+            this.Controls.SetChildIndex(this.chkWholeWord, 0);
             this.Controls.SetChildIndex(this.gbDirection, 0);
             this.gbDirection.ResumeLayout(false);
             this.gbDirection.PerformLayout();

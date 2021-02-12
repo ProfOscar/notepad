@@ -13,6 +13,12 @@ namespace NotepadFormProject
         public FormTrova()
         {
             InitializeComponent();
+            rbUp.Checked = FindSubClass.Parameters.isUp;
+        }
+
+        private void rbUp_CheckedChanged(object sender, EventArgs e)
+        {
+            FindSubClass.Parameters.isUp = rbUp.Checked;
         }
     }
 }

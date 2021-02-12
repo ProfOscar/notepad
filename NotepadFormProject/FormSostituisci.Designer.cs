@@ -90,8 +90,8 @@
             this.Text = "Sostituisci";
             this.Controls.SetChildIndex(this.txtFind, 0);
             this.Controls.SetChildIndex(this.btnAnnulla, 0);
-            this.Controls.SetChildIndex(this.chkUpLow, 0);
-            this.Controls.SetChildIndex(this.chkTextAround, 0);
+            this.Controls.SetChildIndex(this.chkCaseSensitive, 0);
+            this.Controls.SetChildIndex(this.chkWholeWord, 0);
             this.Controls.SetChildIndex(this.lblSubst, 0);
             this.Controls.SetChildIndex(this.txtSubst, 0);
             this.Controls.SetChildIndex(this.btnSubst, 0);

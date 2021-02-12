@@ -15,6 +15,9 @@ namespace NotepadFormProject
         public FormBaseTrovaSostituisci()
         {
             InitializeComponent();
+            txtFind.Text = FindSubClass.Parameters.textToFind;
+            chkCaseSensitive.Checked = FindSubClass.Parameters.isCaseSensitive;
+            chkWholeWord.Checked = FindSubClass.Parameters.isWholeWord;
         }
 
         private void btnAnnulla_Click(object sender, EventArgs e)
@@ -27,11 +30,24 @@ namespace NotepadFormProject
             FindSubClass.Parameters.textToFind = txtFind.Text;
         }
 
+        private void chkCaseSensitive_CheckedChanged(object sender, EventArgs e)
+        {
+            FindSubClass.Parameters.isCaseSensitive = chkCaseSensitive.Checked;
+        }
+
+        private void chkWholeWord_CheckedChanged(object sender, EventArgs e)
+        {
+            FindSubClass.Parameters.isWholeWord = chkWholeWord.Checked;
+        }
+
         private void btnFind_Click(object sender, EventArgs e)
         {
             if (FindSubClass.Find() == -1)
             {
-                MessageBox.Show("Non trovato!");
+                MessageBox.Show("Impossibile trovare \"" + txtFind.Text + "\"",
+                    "Blocco note",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
             }
         }
     }

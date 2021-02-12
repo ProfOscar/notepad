@@ -89,7 +89,7 @@
             this.ToolStripMenuItem});
             this.menuStripMain.Location = new System.Drawing.Point(0, 0);
             this.menuStripMain.Name = "menuStripMain";
-            this.menuStripMain.Size = new System.Drawing.Size(1200, 33);
+            this.menuStripMain.Size = new System.Drawing.Size(1200, 36);
             this.menuStripMain.TabIndex = 0;
             this.menuStripMain.Text = "menuStrip1";
             // 
@@ -434,11 +434,13 @@
             // rtbMain
             // 
             this.rtbMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtbMain.Location = new System.Drawing.Point(0, 33);
+            this.rtbMain.Font = new System.Drawing.Font("Consolas", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbMain.HideSelection = false;
+            this.rtbMain.Location = new System.Drawing.Point(0, 36);
             this.rtbMain.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rtbMain.Name = "rtbMain";
             this.rtbMain.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedBoth;
-            this.rtbMain.Size = new System.Drawing.Size(1200, 637);
+            this.rtbMain.Size = new System.Drawing.Size(1200, 634);
             this.rtbMain.TabIndex = 2;
             this.rtbMain.Text = "";
             this.rtbMain.SelectionChanged += new System.EventHandler(this.rtbMain_SelectionChanged);
