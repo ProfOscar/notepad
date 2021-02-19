@@ -28,6 +28,7 @@ namespace NotepadFormProject
         private void txtFind_TextChanged(object sender, EventArgs e)
         {
             FindSubClass.Parameters.textToFind = txtFind.Text;
+            btnFind.Enabled = txtFind.Text.Length > 0;
         }
 
         private void chkCaseSensitive_CheckedChanged(object sender, EventArgs e)
@@ -44,10 +45,7 @@ namespace NotepadFormProject
         {
             if (FindSubClass.Find() == -1)
             {
-                MessageBox.Show("Impossibile trovare \"" + txtFind.Text + "\"",
-                    "Blocco note",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+                FindSubClass.showNotFoundMessageBox();
             }
         }
     }

@@ -56,6 +56,7 @@
             // 
             // btnFind
             // 
+            this.btnFind.Enabled = false;
             this.btnFind.Location = new System.Drawing.Point(352, 12);
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(164, 35);
@@ -75,11 +76,11 @@
             this.btnAnnulla.UseVisualStyleBackColor = true;
             this.btnAnnulla.Click += new System.EventHandler(this.btnAnnulla_Click);
             // 
-            // chkUpLow
+            // chkCaseSensitive
             // 
             this.chkCaseSensitive.AutoSize = true;
             this.chkCaseSensitive.Location = new System.Drawing.Point(12, 163);
-            this.chkCaseSensitive.Name = "chkUpLow";
+            this.chkCaseSensitive.Name = "chkCaseSensitive";
             this.chkCaseSensitive.Size = new System.Drawing.Size(181, 24);
             this.chkCaseSensitive.TabIndex = 4;
             this.chkCaseSensitive.Text = "Maiuscole/minuscole";

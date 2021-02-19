@@ -48,5 +48,13 @@ namespace NotepadFormProject
             }
             return Target.Find(Parameters.textToFind, start, end, options);
         }
+
+        public static void showNotFoundMessageBox()
+        {
+            MessageBox.Show("Impossibile trovare \"" + Parameters.textToFind + "\"",
+                "Blocco note",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+        }
     }
 }

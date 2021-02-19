@@ -251,12 +251,29 @@ namespace NotepadFormProject
 
         private void trovaSuccessivoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("TODO");
+            FindSubClass.Parameters.isUp = false;
+            showFindForm();
         }
 
         private void trovaPrecedenteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("TODO");
+            FindSubClass.Parameters.isUp = true;
+            showFindForm();
+        }
+
+        private void showFindForm()
+        {
+            if (FindSubClass.Parameters.textToFind.Length == 0)
+            {
+                trovaToolStripMenuItem_Click(null, null);
+            }
+            else
+            {
+                if (FindSubClass.Find() == -1)
+                {
+                    FindSubClass.showNotFoundMessageBox();
+                }
+            }
         }
 
         private void sostituisciToolStripMenuItem_Click(object sender, EventArgs e)
