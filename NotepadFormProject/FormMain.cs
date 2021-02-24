@@ -304,6 +304,7 @@ namespace NotepadFormProject
 
         private void sostituisciToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            FindSubClass.Parameters.isUp = false;
             FormSostituisci fs = new FormSostituisci();
             fs.Show();
         }

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.lblSubst = new System.Windows.Forms.Label();
-            this.txtSubst = new System.Windows.Forms.TextBox();
-            this.btnSubst = new System.Windows.Forms.Button();
-            this.btnSubstAll = new System.Windows.Forms.Button();
+            this.txtReplace = new System.Windows.Forms.TextBox();
+            this.btnReplace = new System.Windows.Forms.Button();
+            this.btnReplaceAll = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAnnulla
@@ -54,37 +54,37 @@
             // 
             // txtSubst
             // 
-            this.txtSubst.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSubst.Location = new System.Drawing.Point(133, 61);
-            this.txtSubst.Name = "txtSubst";
-            this.txtSubst.Size = new System.Drawing.Size(204, 30);
-            this.txtSubst.TabIndex = 7;
+            this.txtReplace.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReplace.Location = new System.Drawing.Point(133, 61);
+            this.txtReplace.Name = "txtSubst";
+            this.txtReplace.Size = new System.Drawing.Size(204, 30);
+            this.txtReplace.TabIndex = 7;
             // 
             // btnSubst
             // 
-            this.btnSubst.Location = new System.Drawing.Point(353, 56);
-            this.btnSubst.Name = "btnSubst";
-            this.btnSubst.Size = new System.Drawing.Size(163, 35);
-            this.btnSubst.TabIndex = 8;
-            this.btnSubst.Text = "Sostituisci";
-            this.btnSubst.UseVisualStyleBackColor = true;
+            this.btnReplace.Location = new System.Drawing.Point(353, 56);
+            this.btnReplace.Name = "btnSubst";
+            this.btnReplace.Size = new System.Drawing.Size(163, 35);
+            this.btnReplace.TabIndex = 8;
+            this.btnReplace.Text = "Sostituisci";
+            this.btnReplace.UseVisualStyleBackColor = true;
             // 
             // btnSubstAll
             // 
-            this.btnSubstAll.Location = new System.Drawing.Point(353, 101);
-            this.btnSubstAll.Name = "btnSubstAll";
-            this.btnSubstAll.Size = new System.Drawing.Size(163, 35);
-            this.btnSubstAll.TabIndex = 9;
-            this.btnSubstAll.Text = "Sostituisci tutto";
-            this.btnSubstAll.UseVisualStyleBackColor = true;
+            this.btnReplaceAll.Location = new System.Drawing.Point(353, 101);
+            this.btnReplaceAll.Name = "btnSubstAll";
+            this.btnReplaceAll.Size = new System.Drawing.Size(163, 35);
+            this.btnReplaceAll.TabIndex = 9;
+            this.btnReplaceAll.Text = "Sostituisci tutto";
+            this.btnReplaceAll.UseVisualStyleBackColor = true;
             // 
             // FormSostituisci
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.ClientSize = new System.Drawing.Size(528, 244);
-            this.Controls.Add(this.btnSubstAll);
-            this.Controls.Add(this.btnSubst);
-            this.Controls.Add(this.txtSubst);
+            this.Controls.Add(this.btnReplaceAll);
+            this.Controls.Add(this.btnReplace);
+            this.Controls.Add(this.txtReplace);
             this.Controls.Add(this.lblSubst);
             this.Name = "FormSostituisci";
             this.Text = "Sostituisci";
@@ -93,9 +93,9 @@
             this.Controls.SetChildIndex(this.chkCaseSensitive, 0);
             this.Controls.SetChildIndex(this.chkWholeWord, 0);
             this.Controls.SetChildIndex(this.lblSubst, 0);
-            this.Controls.SetChildIndex(this.txtSubst, 0);
-            this.Controls.SetChildIndex(this.btnSubst, 0);
-            this.Controls.SetChildIndex(this.btnSubstAll, 0);
+            this.Controls.SetChildIndex(this.txtReplace, 0);
+            this.Controls.SetChildIndex(this.btnReplace, 0);
+            this.Controls.SetChildIndex(this.btnReplaceAll, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -104,8 +104,8 @@
         #endregion
 
         private System.Windows.Forms.Label lblSubst;
-        private System.Windows.Forms.TextBox txtSubst;
-        private System.Windows.Forms.Button btnSubst;
-        private System.Windows.Forms.Button btnSubstAll;
+        private System.Windows.Forms.TextBox txtReplace;
+        private System.Windows.Forms.Button btnReplace;
+        private System.Windows.Forms.Button btnReplaceAll;
     }
 }

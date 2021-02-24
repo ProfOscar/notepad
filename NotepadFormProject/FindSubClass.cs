@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,7 +17,7 @@ namespace NotepadFormProject
         public struct Parameters
         {
             public static string textToFind = "";
-            public static string subText = "";
+            public static string textToReplace = "";
             public static bool isUp = false;
             public static bool isCaseSensitive = false;
             public static bool isWholeWord = false;
@@ -47,6 +48,12 @@ namespace NotepadFormProject
                 options |= RichTextBoxFinds.WholeWord;
             }
             return Target.Find(Parameters.textToFind, start, end, options);
+        }
+
+        public static void ReplaceAll()
+        {
+            RegexOptions options = Parameters.isCaseSensitive ? RegexOptions.None : RegexOptions.IgnoreCase;
+            Target.Text = Regex.Replace(Target.Text, Parameters.textToFind, Parameters.textToReplace, options);
         }
 
         public static void showNotFoundMessageBox()

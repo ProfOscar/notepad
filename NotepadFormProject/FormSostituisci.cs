@@ -13,6 +13,31 @@ namespace NotepadFormProject
         public FormSostituisci()
         {
             InitializeComponent();
+            btnReplace.Enabled = btnReplaceAll.Enabled = false;
+            txtFind.TextChanged += TxtFind_TextChanged;
+            txtReplace.TextChanged += TxtReplace_TextChanged;
+            btnReplace.Click += BtnReplace_Click;
+            btnReplaceAll.Click += BtnReplaceAll_Click;
+        }
+
+        private void TxtFind_TextChanged(object sender, EventArgs e)
+        {
+            btnReplace.Enabled = btnReplaceAll.Enabled = txtFind.Text.Length > 0;
+        }
+
+        private void TxtReplace_TextChanged(object sender, EventArgs e)
+        {
+            FindSubClass.Parameters.textToReplace = txtReplace.Text;
+        }
+
+        private void BtnReplace_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void BtnReplaceAll_Click(object sender, EventArgs e)
+        {
+            FindSubClass.ReplaceAll();
         }
     }
 }
