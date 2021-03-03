@@ -53,7 +53,8 @@ namespace NotepadFormProject
         public static void ReplaceAll()
         {
             RegexOptions options = Parameters.isCaseSensitive ? RegexOptions.None : RegexOptions.IgnoreCase;
-            Target.Text = Regex.Replace(Target.Text, Parameters.textToFind, Parameters.textToReplace, options);
+            string myTextToFind = Parameters.isWholeWord ? String.Format(@"\b{0}\b", Parameters.textToFind) : Parameters.textToFind;
+            Target.Text = Regex.Replace(Target.Text, myTextToFind, Parameters.textToReplace, options);
         }
 
         public static void showNotFoundMessageBox()

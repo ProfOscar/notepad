@@ -13,11 +13,11 @@ namespace NotepadFormProject
         public FormSostituisci()
         {
             InitializeComponent();
-            btnReplace.Enabled = btnReplaceAll.Enabled = false;
             txtFind.TextChanged += TxtFind_TextChanged;
             txtReplace.TextChanged += TxtReplace_TextChanged;
             btnReplace.Click += BtnReplace_Click;
             btnReplaceAll.Click += BtnReplaceAll_Click;
+            TxtFind_TextChanged(null, null);
         }
 
         private void TxtFind_TextChanged(object sender, EventArgs e)
