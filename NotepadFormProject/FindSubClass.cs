@@ -50,6 +50,21 @@ namespace NotepadFormProject
             return Target.Find(Parameters.textToFind, start, end, options);
         }
 
+        public static int Replace()
+        {
+            int retVal = 0;
+            if (FindSubClass.Target.SelectedText == FindSubClass.Parameters.textToFind)
+            {
+                FindSubClass.Target.SelectedText = FindSubClass.Parameters.textToReplace;
+                retVal = Find();
+            }
+            else
+            {
+                retVal = Find();
+            }
+            return retVal;
+        }
+
         public static void ReplaceAll()
         {
             RegexOptions options = Parameters.isCaseSensitive ? RegexOptions.None : RegexOptions.IgnoreCase;

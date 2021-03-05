@@ -32,7 +32,10 @@ namespace NotepadFormProject
 
         private void BtnReplace_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            if (FindSubClass.Replace() == -1)
+            {
+                FindSubClass.showNotFoundMessageBox();
+            }
         }
 
         private void BtnReplaceAll_Click(object sender, EventArgs e)
