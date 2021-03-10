@@ -343,6 +343,14 @@ namespace NotepadFormProject
             vaiAToolStripMenuItem.Enabled = !acapoautomaticoToolStripMenuItem.Checked;
         }
 
+        private void carattereToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (fontDialogMain.ShowDialog() == DialogResult.OK)
+            {
+                rtbMain.Font = fontDialogMain.Font;
+            }
+        }
+
         #endregion
 
         #region Custom Functions
