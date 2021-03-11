@@ -5,13 +5,13 @@ using System.Runtime.InteropServices;
 // Le informazioni generali relative a un assembly sono controllate dal seguente 
 // set di attributi. Modificare i valori di questi attributi per modificare le informazioni
 // associate a un assembly.
-[assembly: AssemblyTitle("NotepadFormProject")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Notepad by ProfOscar")]
+[assembly: AssemblyDescription("Progetto scolastico dotNET che prevede la creazione di un clone perfetto del Blocco Note di Windows programmando una soluzione Windows Form in C#.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("NotepadFormProject")]
-[assembly: AssemblyCopyright("Copyright ©  2020")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCompany("ProfOscar - IIS Vallauri")]
+[assembly: AssemblyProduct("Notepad by ProfOscar")]
+[assembly: AssemblyCopyright("Copyright © 2021 - ProfOscar")]
+[assembly: AssemblyTrademark("Registered ® by ProfOscar - IIS Vallauri")]
 [assembly: AssemblyCulture("")]
 
 // Se si imposta ComVisible su false, i tipi in questo assembly non saranno visibili

@@ -351,6 +351,22 @@ namespace NotepadFormProject
             }
         }
 
+        private void guidaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://go.microsoft.com/fwlink/?LinkId=834783");
+        }
+
+        private void inviaFeedbackToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://github.com/ProfOscar/notepad/issues");
+        }
+
+        private void informazionisuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutBoxMain ab = new AboutBoxMain();
+            ab.ShowDialog();
+        }
+
         #endregion
 
         #region Custom Functions
@@ -413,6 +429,5 @@ namespace NotepadFormProject
         }
 
         #endregion
-
     }
 }

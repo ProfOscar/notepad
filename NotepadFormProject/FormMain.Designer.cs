@@ -62,10 +62,15 @@
             this.formatoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acapoautomaticoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.carattereToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.visualizzaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.zoomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.zoomavantiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.zoomindietroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ripristinaZoomPredefinitoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.barraDistatoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sommarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.indiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cercaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.guidaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inviaFeedbackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.informazionisuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStripMain = new System.Windows.Forms.StatusStrip();
@@ -86,6 +91,7 @@
             this.fileToolStripMenuItem,
             this.modificaToolStripMenuItem,
             this.formatoToolStripMenuItem,
+            this.visualizzaToolStripMenuItem,
             this.ToolStripMenuItem});
             this.menuStripMain.Location = new System.Drawing.Point(0, 0);
             this.menuStripMain.Name = "menuStripMain";
@@ -371,57 +377,101 @@
             // 
             this.acapoautomaticoToolStripMenuItem.CheckOnClick = true;
             this.acapoautomaticoToolStripMenuItem.Name = "acapoautomaticoToolStripMenuItem";
-            this.acapoautomaticoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.acapoautomaticoToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.acapoautomaticoToolStripMenuItem.Text = "A capo a&utomatico";
             this.acapoautomaticoToolStripMenuItem.Click += new System.EventHandler(this.acapoautomaticoToolStripMenuItem_Click);
             // 
             // carattereToolStripMenuItem
             // 
             this.carattereToolStripMenuItem.Name = "carattereToolStripMenuItem";
-            this.carattereToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.carattereToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.carattereToolStripMenuItem.Text = "Cara&ttere...";
             this.carattereToolStripMenuItem.Click += new System.EventHandler(this.carattereToolStripMenuItem_Click);
+            // 
+            // visualizzaToolStripMenuItem
+            // 
+            this.visualizzaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.zoomToolStripMenuItem,
+            this.barraDistatoToolStripMenuItem});
+            this.visualizzaToolStripMenuItem.Name = "visualizzaToolStripMenuItem";
+            this.visualizzaToolStripMenuItem.Size = new System.Drawing.Size(69, 22);
+            this.visualizzaToolStripMenuItem.Text = "&Visualizza";
+            // 
+            // zoomToolStripMenuItem
+            // 
+            this.zoomToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.zoomavantiToolStripMenuItem,
+            this.zoomindietroToolStripMenuItem,
+            this.ripristinaZoomPredefinitoToolStripMenuItem});
+            this.zoomToolStripMenuItem.Name = "zoomToolStripMenuItem";
+            this.zoomToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.zoomToolStripMenuItem.Text = "&Zoom";
+            // 
+            // zoomavantiToolStripMenuItem
+            // 
+            this.zoomavantiToolStripMenuItem.Name = "zoomavantiToolStripMenuItem";
+            this.zoomavantiToolStripMenuItem.ShortcutKeyDisplayString = "CTRL+segno più";
+            this.zoomavantiToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Oemplus)));
+            this.zoomavantiToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
+            this.zoomavantiToolStripMenuItem.Text = "Zoom &avanti";
+            // 
+            // zoomindietroToolStripMenuItem
+            // 
+            this.zoomindietroToolStripMenuItem.Name = "zoomindietroToolStripMenuItem";
+            this.zoomindietroToolStripMenuItem.ShortcutKeyDisplayString = "CTRL+segno meno";
+            this.zoomindietroToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.OemMinus)));
+            this.zoomindietroToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
+            this.zoomindietroToolStripMenuItem.Text = "Zoom &indietro";
+            // 
+            // ripristinaZoomPredefinitoToolStripMenuItem
+            // 
+            this.ripristinaZoomPredefinitoToolStripMenuItem.Name = "ripristinaZoomPredefinitoToolStripMenuItem";
+            this.ripristinaZoomPredefinitoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D0)));
+            this.ripristinaZoomPredefinitoToolStripMenuItem.Size = new System.Drawing.Size(265, 22);
+            this.ripristinaZoomPredefinitoToolStripMenuItem.Text = "&Ripristina zoom predefinito";
+            // 
+            // barraDistatoToolStripMenuItem
+            // 
+            this.barraDistatoToolStripMenuItem.Name = "barraDistatoToolStripMenuItem";
+            this.barraDistatoToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.barraDistatoToolStripMenuItem.Text = "Barra di &stato";
             // 
             // ToolStripMenuItem
             // 
             this.ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sommarioToolStripMenuItem,
-            this.indiceToolStripMenuItem,
-            this.cercaToolStripMenuItem,
+            this.guidaToolStripMenuItem,
+            this.inviaFeedbackToolStripMenuItem,
             this.toolStripSeparator5,
             this.informazionisuToolStripMenuItem});
             this.ToolStripMenuItem.Name = "ToolStripMenuItem";
             this.ToolStripMenuItem.Size = new System.Drawing.Size(24, 22);
             this.ToolStripMenuItem.Text = "&?";
             // 
-            // sommarioToolStripMenuItem
+            // guidaToolStripMenuItem
             // 
-            this.sommarioToolStripMenuItem.Name = "sommarioToolStripMenuItem";
-            this.sommarioToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
-            this.sommarioToolStripMenuItem.Text = "&Sommario";
+            this.guidaToolStripMenuItem.Name = "guidaToolStripMenuItem";
+            this.guidaToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
+            this.guidaToolStripMenuItem.Text = "&Guida";
+            this.guidaToolStripMenuItem.Click += new System.EventHandler(this.guidaToolStripMenuItem_Click);
             // 
-            // indiceToolStripMenuItem
+            // inviaFeedbackToolStripMenuItem
             // 
-            this.indiceToolStripMenuItem.Name = "indiceToolStripMenuItem";
-            this.indiceToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
-            this.indiceToolStripMenuItem.Text = "&Indice";
-            // 
-            // cercaToolStripMenuItem
-            // 
-            this.cercaToolStripMenuItem.Name = "cercaToolStripMenuItem";
-            this.cercaToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
-            this.cercaToolStripMenuItem.Text = "&Cerca";
+            this.inviaFeedbackToolStripMenuItem.Name = "inviaFeedbackToolStripMenuItem";
+            this.inviaFeedbackToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
+            this.inviaFeedbackToolStripMenuItem.Text = "&Invia feedback";
+            this.inviaFeedbackToolStripMenuItem.Click += new System.EventHandler(this.inviaFeedbackToolStripMenuItem_Click);
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(162, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(221, 6);
             // 
             // informazionisuToolStripMenuItem
             // 
             this.informazionisuToolStripMenuItem.Name = "informazionisuToolStripMenuItem";
-            this.informazionisuToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
-            this.informazionisuToolStripMenuItem.Text = "&Informazioni su...";
+            this.informazionisuToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
+            this.informazionisuToolStripMenuItem.Text = "Informazioni &su Blocco Note";
+            this.informazionisuToolStripMenuItem.Click += new System.EventHandler(this.informazionisuToolStripMenuItem_Click);
             // 
             // statusStripMain
             // 
@@ -516,9 +566,8 @@
         private System.Windows.Forms.ToolStripMenuItem acapoautomaticoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem carattereToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sommarioToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem indiceToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cercaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem guidaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inviaFeedbackToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripMenuItem informazionisuToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStripMain;
@@ -540,6 +589,12 @@
         private System.Windows.Forms.ToolStripMenuItem trovaPrecedenteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sostituisciToolStripMenuItem;
         private System.Windows.Forms.FontDialog fontDialogMain;
+        private System.Windows.Forms.ToolStripMenuItem visualizzaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem zoomToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem zoomavantiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem zoomindietroToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ripristinaZoomPredefinitoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem barraDistatoToolStripMenuItem;
     }
 }
 
