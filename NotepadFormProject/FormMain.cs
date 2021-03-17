@@ -30,6 +30,7 @@ namespace NotepadFormProject
             InitializeComponent();
             pageSetupDialogMain.Document = this.printDocumentMain;
             printDialogMain.Document = this.printDocumentMain;
+            toolStripStatusLabelZoom.Text = "100%";
             this.initializeVariables();
             FindSubClass.Target = rtbMain;
         }
@@ -76,6 +77,11 @@ namespace NotepadFormProject
             copiaToolStripMenuItem.Enabled = enableButtons;
             tagliaToolStripMenuItem.Enabled = enableButtons;
             eliminaToolStripMenuItem.Enabled = enableButtons;
+            string portion = rtbMain.Text.Substring(0, rtbMain.SelectionStart);
+            int line = System.Text.RegularExpressions.Regex.Matches(portion, @"\n").Count + 1;
+            int column = 1;
+            string st = "Linea " + line + ", colonna " + column;
+            toolStripStatusLabelLineColumn.Text = st;
         }
 
         #endregion
@@ -356,6 +362,7 @@ namespace NotepadFormProject
             if (rtbMain.ZoomFactor < 60)
             {
                 rtbMain.ZoomFactor += (float)0.1;
+                setZoomStatusStripLabel();
             }
         }
 
@@ -364,12 +371,14 @@ namespace NotepadFormProject
             if (rtbMain.ZoomFactor > 0.5)
             {
                 rtbMain.ZoomFactor -= (float)0.1;
+                setZoomStatusStripLabel();
             }
         }
 
         private void ripristinaZoomPredefinitoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             rtbMain.ZoomFactor = 1;
+            setZoomStatusStripLabel();
         }
 
         private void barraDistatoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -452,6 +461,11 @@ namespace NotepadFormProject
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
             }
+        }
+
+        private void setZoomStatusStripLabel()
+        {
+            toolStripStatusLabelZoom.Text = (int)(rtbMain.ZoomFactor * 100) + "%";
         }
 
         #endregion

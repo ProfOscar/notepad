@@ -81,7 +81,12 @@
             this.printDocumentMain = new System.Drawing.Printing.PrintDocument();
             this.printDialogMain = new System.Windows.Forms.PrintDialog();
             this.fontDialogMain = new System.Windows.Forms.FontDialog();
+            this.toolStripStatusLabelEncoding = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabelLineEnding = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabelZoom = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabelLineColumn = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStripMain.SuspendLayout();
+            this.statusStripMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStripMain
@@ -480,8 +485,14 @@
             // statusStripMain
             // 
             this.statusStripMain.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.statusStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabelEncoding,
+            this.toolStripStatusLabelLineEnding,
+            this.toolStripStatusLabelZoom,
+            this.toolStripStatusLabelLineColumn});
             this.statusStripMain.Location = new System.Drawing.Point(0, 428);
             this.statusStripMain.Name = "statusStripMain";
+            this.statusStripMain.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.statusStripMain.Size = new System.Drawing.Size(800, 22);
             this.statusStripMain.TabIndex = 1;
             this.statusStripMain.Text = "statusStrip1";
@@ -497,6 +508,7 @@
             this.rtbMain.Size = new System.Drawing.Size(800, 404);
             this.rtbMain.TabIndex = 2;
             this.rtbMain.Text = "";
+            this.rtbMain.WordWrap = false;
             this.rtbMain.SelectionChanged += new System.EventHandler(this.rtbMain_SelectionChanged);
             this.rtbMain.TextChanged += new System.EventHandler(this.rtbMain_TextChanged);
             // 
@@ -524,6 +536,41 @@
             this.printDialogMain.Document = this.printDocumentMain;
             this.printDialogMain.UseEXDialog = true;
             // 
+            // toolStripStatusLabelEncoding
+            // 
+            this.toolStripStatusLabelEncoding.AutoSize = false;
+            this.toolStripStatusLabelEncoding.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
+            this.toolStripStatusLabelEncoding.Name = "toolStripStatusLabelEncoding";
+            this.toolStripStatusLabelEncoding.Size = new System.Drawing.Size(120, 17);
+            this.toolStripStatusLabelEncoding.Text = "(encoding)";
+            this.toolStripStatusLabelEncoding.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // toolStripStatusLabelLineEnding
+            // 
+            this.toolStripStatusLabelLineEnding.AutoSize = false;
+            this.toolStripStatusLabelLineEnding.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
+            this.toolStripStatusLabelLineEnding.Name = "toolStripStatusLabelLineEnding";
+            this.toolStripStatusLabelLineEnding.Size = new System.Drawing.Size(140, 17);
+            this.toolStripStatusLabelLineEnding.Text = "(line ending)";
+            this.toolStripStatusLabelLineEnding.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // toolStripStatusLabelZoom
+            // 
+            this.toolStripStatusLabelZoom.AutoSize = false;
+            this.toolStripStatusLabelZoom.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
+            this.toolStripStatusLabelZoom.Name = "toolStripStatusLabelZoom";
+            this.toolStripStatusLabelZoom.Size = new System.Drawing.Size(60, 17);
+            this.toolStripStatusLabelZoom.Text = "(zoom)";
+            // 
+            // toolStripStatusLabelLineColumn
+            // 
+            this.toolStripStatusLabelLineColumn.AutoSize = false;
+            this.toolStripStatusLabelLineColumn.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
+            this.toolStripStatusLabelLineColumn.Name = "toolStripStatusLabelLineColumn";
+            this.toolStripStatusLabelLineColumn.Size = new System.Drawing.Size(150, 17);
+            this.toolStripStatusLabelLineColumn.Text = "(linea,colonna)";
+            this.toolStripStatusLabelLineColumn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -540,6 +587,8 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMain_FormClosing);
             this.menuStripMain.ResumeLayout(false);
             this.menuStripMain.PerformLayout();
+            this.statusStripMain.ResumeLayout(false);
+            this.statusStripMain.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -599,6 +648,10 @@
         private System.Windows.Forms.ToolStripMenuItem zoomindietroToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ripristinaZoomPredefinitoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem barraDistatoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelEncoding;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelLineEnding;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelZoom;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelLineColumn;
     }
 }
 
