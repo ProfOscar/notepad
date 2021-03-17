@@ -186,7 +186,7 @@ namespace NotepadFormProject
             if (printDialogMain.ShowDialog() == DialogResult.OK)
             {
                 printDocumentMain.Print();
-                
+
             }
         }
 
@@ -351,6 +351,32 @@ namespace NotepadFormProject
             }
         }
 
+        private void zoomavantiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (rtbMain.ZoomFactor < 60)
+            {
+                rtbMain.ZoomFactor += (float)0.1;
+            }
+        }
+
+        private void zoomindietroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (rtbMain.ZoomFactor > 0.5)
+            {
+                rtbMain.ZoomFactor -= (float)0.1;
+            }
+        }
+
+        private void ripristinaZoomPredefinitoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rtbMain.ZoomFactor = 1;
+        }
+
+        private void barraDistatoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void guidaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Process.Start("https://go.microsoft.com/fwlink/?LinkId=834783");
@@ -400,9 +426,9 @@ namespace NotepadFormProject
                 string message = "Salvare le modifiche a " + this.fileName + "?";
                 string caption = "Blocco note";
                 result = MessageBox.Show(
-                    message, 
-                    caption, 
-                    MessageBoxButtons.YesNoCancel, 
+                    message,
+                    caption,
+                    MessageBoxButtons.YesNoCancel,
                     MessageBoxIcon.Question);
             }
             return result;
