@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.IO;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace NotepadFormProject
@@ -16,8 +17,8 @@ namespace NotepadFormProject
         string filePath;
         string savedContent;
 
-        // PrinterSettings printerSettings;
-        // PageSettings pageSettings;
+        int line = 1;
+        int column = 1;
 
         #endregion
 
@@ -25,8 +26,6 @@ namespace NotepadFormProject
 
         public FormMain()
         {
-            // printerSettings = new PrinterSettings();
-            // pageSettings = new PageSettings(printerSettings);
             InitializeComponent();
             pageSetupDialogMain.Document = this.printDocumentMain;
             printDialogMain.Document = this.printDocumentMain;
@@ -77,9 +76,14 @@ namespace NotepadFormProject
             copiaToolStripMenuItem.Enabled = enableButtons;
             tagliaToolStripMenuItem.Enabled = enableButtons;
             eliminaToolStripMenuItem.Enabled = enableButtons;
-            string portion = rtbMain.Text.Substring(0, rtbMain.SelectionStart);
-            int line = System.Text.RegularExpressions.Regex.Matches(portion, @"\n").Count + 1;
-            int column = 1;
+            if (rtbMain.Text.Length > 0)
+            {
+                string portion = rtbMain.Text.Substring(0, rtbMain.SelectionStart);
+                line = Regex.Matches(portion, @"\n").Count + 1;
+                // per la colonna: cercare la posizione dell'acapo che precede selectionStart e fare il calcolo
+                int lastNewlinePos = portion.LastIndexOf('\n');
+                column = rtbMain.SelectionStart - lastNewlinePos;
+            }
             string st = "Linea " + line + ", colonna " + column;
             toolStripStatusLabelLineColumn.Text = st;
         }
@@ -383,7 +387,7 @@ namespace NotepadFormProject
 
         private void barraDistatoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            statusStripMain.Visible = barraDistatoToolStripMenuItem.Checked;
         }
 
         private void guidaToolStripMenuItem_Click(object sender, EventArgs e)

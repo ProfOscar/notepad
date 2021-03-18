@@ -74,6 +74,10 @@
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.informazionisuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStripMain = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabelEncoding = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabelLineEnding = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabelZoom = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabelLineColumn = new System.Windows.Forms.ToolStripStatusLabel();
             this.rtbMain = new System.Windows.Forms.RichTextBox();
             this.saveFileDialogMain = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialogMain = new System.Windows.Forms.OpenFileDialog();
@@ -81,10 +85,6 @@
             this.printDocumentMain = new System.Drawing.Printing.PrintDocument();
             this.printDialogMain = new System.Windows.Forms.PrintDialog();
             this.fontDialogMain = new System.Windows.Forms.FontDialog();
-            this.toolStripStatusLabelEncoding = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabelLineEnding = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabelZoom = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabelLineColumn = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStripMain.SuspendLayout();
             this.statusStripMain.SuspendLayout();
             this.SuspendLayout();
@@ -382,14 +382,14 @@
             // 
             this.acapoautomaticoToolStripMenuItem.CheckOnClick = true;
             this.acapoautomaticoToolStripMenuItem.Name = "acapoautomaticoToolStripMenuItem";
-            this.acapoautomaticoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.acapoautomaticoToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.acapoautomaticoToolStripMenuItem.Text = "A capo a&utomatico";
             this.acapoautomaticoToolStripMenuItem.Click += new System.EventHandler(this.acapoautomaticoToolStripMenuItem_Click);
             // 
             // carattereToolStripMenuItem
             // 
             this.carattereToolStripMenuItem.Name = "carattereToolStripMenuItem";
-            this.carattereToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.carattereToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.carattereToolStripMenuItem.Text = "Cara&ttere...";
             this.carattereToolStripMenuItem.Click += new System.EventHandler(this.carattereToolStripMenuItem_Click);
             // 
@@ -440,6 +440,9 @@
             // 
             // barraDistatoToolStripMenuItem
             // 
+            this.barraDistatoToolStripMenuItem.Checked = true;
+            this.barraDistatoToolStripMenuItem.CheckOnClick = true;
+            this.barraDistatoToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.barraDistatoToolStripMenuItem.Name = "barraDistatoToolStripMenuItem";
             this.barraDistatoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.barraDistatoToolStripMenuItem.Text = "Barra di &stato";
@@ -497,6 +500,41 @@
             this.statusStripMain.TabIndex = 1;
             this.statusStripMain.Text = "statusStrip1";
             // 
+            // toolStripStatusLabelEncoding
+            // 
+            this.toolStripStatusLabelEncoding.AutoSize = false;
+            this.toolStripStatusLabelEncoding.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
+            this.toolStripStatusLabelEncoding.Name = "toolStripStatusLabelEncoding";
+            this.toolStripStatusLabelEncoding.Size = new System.Drawing.Size(120, 17);
+            this.toolStripStatusLabelEncoding.Text = "(encoding)";
+            this.toolStripStatusLabelEncoding.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // toolStripStatusLabelLineEnding
+            // 
+            this.toolStripStatusLabelLineEnding.AutoSize = false;
+            this.toolStripStatusLabelLineEnding.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
+            this.toolStripStatusLabelLineEnding.Name = "toolStripStatusLabelLineEnding";
+            this.toolStripStatusLabelLineEnding.Size = new System.Drawing.Size(140, 17);
+            this.toolStripStatusLabelLineEnding.Text = "(line ending)";
+            this.toolStripStatusLabelLineEnding.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // toolStripStatusLabelZoom
+            // 
+            this.toolStripStatusLabelZoom.AutoSize = false;
+            this.toolStripStatusLabelZoom.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
+            this.toolStripStatusLabelZoom.Name = "toolStripStatusLabelZoom";
+            this.toolStripStatusLabelZoom.Size = new System.Drawing.Size(60, 17);
+            this.toolStripStatusLabelZoom.Text = "(zoom)";
+            // 
+            // toolStripStatusLabelLineColumn
+            // 
+            this.toolStripStatusLabelLineColumn.AutoSize = false;
+            this.toolStripStatusLabelLineColumn.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
+            this.toolStripStatusLabelLineColumn.Name = "toolStripStatusLabelLineColumn";
+            this.toolStripStatusLabelLineColumn.Size = new System.Drawing.Size(150, 17);
+            this.toolStripStatusLabelLineColumn.Text = "(linea,colonna)";
+            this.toolStripStatusLabelLineColumn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // rtbMain
             // 
             this.rtbMain.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -535,41 +573,6 @@
             // 
             this.printDialogMain.Document = this.printDocumentMain;
             this.printDialogMain.UseEXDialog = true;
-            // 
-            // toolStripStatusLabelEncoding
-            // 
-            this.toolStripStatusLabelEncoding.AutoSize = false;
-            this.toolStripStatusLabelEncoding.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
-            this.toolStripStatusLabelEncoding.Name = "toolStripStatusLabelEncoding";
-            this.toolStripStatusLabelEncoding.Size = new System.Drawing.Size(120, 17);
-            this.toolStripStatusLabelEncoding.Text = "(encoding)";
-            this.toolStripStatusLabelEncoding.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // toolStripStatusLabelLineEnding
-            // 
-            this.toolStripStatusLabelLineEnding.AutoSize = false;
-            this.toolStripStatusLabelLineEnding.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
-            this.toolStripStatusLabelLineEnding.Name = "toolStripStatusLabelLineEnding";
-            this.toolStripStatusLabelLineEnding.Size = new System.Drawing.Size(140, 17);
-            this.toolStripStatusLabelLineEnding.Text = "(line ending)";
-            this.toolStripStatusLabelLineEnding.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // toolStripStatusLabelZoom
-            // 
-            this.toolStripStatusLabelZoom.AutoSize = false;
-            this.toolStripStatusLabelZoom.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
-            this.toolStripStatusLabelZoom.Name = "toolStripStatusLabelZoom";
-            this.toolStripStatusLabelZoom.Size = new System.Drawing.Size(60, 17);
-            this.toolStripStatusLabelZoom.Text = "(zoom)";
-            // 
-            // toolStripStatusLabelLineColumn
-            // 
-            this.toolStripStatusLabelLineColumn.AutoSize = false;
-            this.toolStripStatusLabelLineColumn.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
-            this.toolStripStatusLabelLineColumn.Name = "toolStripStatusLabelLineColumn";
-            this.toolStripStatusLabelLineColumn.Size = new System.Drawing.Size(150, 17);
-            this.toolStripStatusLabelLineColumn.Text = "(linea,colonna)";
-            this.toolStripStatusLabelLineColumn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // FormMain
             // 
