@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.IO;
+using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
@@ -19,6 +20,10 @@ namespace NotepadFormProject
 
         int line = 1;
         int column = 1;
+
+        const string WIN = "Windows (CRLF)";
+        const string MAC = "Macintosh (CR)";
+        const string LIN = "Unix (LF)";
 
         #endregion
 
@@ -152,6 +157,18 @@ namespace NotepadFormProject
                     this.fileName = getFileNameFromPath(this.filePath);
                     this.setFormTitle();
                     annullaToolStripMenuItem.Enabled = false;
+                    if (rtbMain.Text.Contains(Environment.NewLine))
+                    {
+                        toolStripStatusLabelLineEnding.Text = WIN;
+                    }
+                    else if (rtbMain.Text.Contains("\r"))
+                    {
+                        toolStripStatusLabelLineEnding.Text = MAC;
+                    }
+                    else
+                    {
+                        toolStripStatusLabelLineEnding.Text = LIN;
+                    }
                 }
                 catch (Exception)
                 {
@@ -423,6 +440,18 @@ namespace NotepadFormProject
             this.savedContent = "";
             this.rtbMain.Text = "";
             this.setFormTitle();
+            if (Environment.NewLine == "\r\n")
+            {
+                toolStripStatusLabelLineEnding.Text = WIN;
+            }
+            else if (Environment.NewLine == "\r")
+            {
+                toolStripStatusLabelLineEnding.Text = MAC;
+            }
+            else
+            {
+                toolStripStatusLabelLineEnding.Text = LIN;
+            }
         }
 
         private void setFormTitle()
