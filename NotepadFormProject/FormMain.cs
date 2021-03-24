@@ -84,6 +84,11 @@ namespace NotepadFormProject
                 int lastNewlinePos = portion.LastIndexOf('\n');
                 column = rtbMain.SelectionStart - lastNewlinePos;
             }
+            else
+            {
+                line = 1;
+                column = 1;
+            }
             string st = "Linea " + line + ", colonna " + column;
             toolStripStatusLabelLineColumn.Text = st;
         }
