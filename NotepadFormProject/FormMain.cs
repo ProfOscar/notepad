@@ -24,6 +24,7 @@ namespace NotepadFormProject
         const string WIN = "Windows (CRLF)";
         const string MAC = "Macintosh (CR)";
         const string LIN = "Unix (LF)";
+        string lineTerminator = "";
 
         #endregion
 
@@ -152,23 +153,31 @@ namespace NotepadFormProject
                 try
                 {
                     this.filePath = openFileDialogMain.FileName;
-                    rtbMain.Text = File.ReadAllText(this.filePath);
+                    string fileText = File.ReadAllText(this.filePath);
+                    if (fileText.Contains("\r\n"))
+                    {
+                        toolStripStatusLabelLineEnding.Text = WIN;
+                        lineTerminator = "\r\n";
+                    }
+                    else if (fileText.Contains("\r"))
+                    {
+                        toolStripStatusLabelLineEnding.Text = MAC;
+                        lineTerminator = "\r";
+                    }
+                    else if (fileText.Contains("\n"))
+                    {
+                        toolStripStatusLabelLineEnding.Text = LIN;
+                        lineTerminator = "\n";
+                    }
+                    else
+                    {
+                        checkEnvironmentNewline();
+                    }
+                    rtbMain.Text = fileText;
                     this.savedContent = rtbMain.Text;
                     this.fileName = getFileNameFromPath(this.filePath);
                     this.setFormTitle();
                     annullaToolStripMenuItem.Enabled = false;
-                    if (rtbMain.Text.Contains(Environment.NewLine))
-                    {
-                        toolStripStatusLabelLineEnding.Text = WIN;
-                    }
-                    else if (rtbMain.Text.Contains("\r"))
-                    {
-                        toolStripStatusLabelLineEnding.Text = MAC;
-                    }
-                    else
-                    {
-                        toolStripStatusLabelLineEnding.Text = LIN;
-                    }
                 }
                 catch (Exception)
                 {
@@ -440,6 +449,11 @@ namespace NotepadFormProject
             this.savedContent = "";
             this.rtbMain.Text = "";
             this.setFormTitle();
+            checkEnvironmentNewline();
+        }
+
+        private void checkEnvironmentNewline()
+        {
             if (Environment.NewLine == "\r\n")
             {
                 toolStripStatusLabelLineEnding.Text = WIN;
@@ -452,6 +466,7 @@ namespace NotepadFormProject
             {
                 toolStripStatusLabelLineEnding.Text = LIN;
             }
+            lineTerminator = Environment.NewLine;
         }
 
         private void setFormTitle()
@@ -485,7 +500,9 @@ namespace NotepadFormProject
         {
             try
             {
-                File.WriteAllText(filePath, rtbMain.Text);
+                string textToWrite = rtbMain.Text;
+                textToWrite = textToWrite.Replace("\n", lineTerminator);
+                File.WriteAllText(filePath, textToWrite);
                 this.savedContent = rtbMain.Text;
                 this.filePath = filePath;
                 this.fileName = getFileNameFromPath(filePath);

@@ -409,7 +409,7 @@
             this.zoomindietroToolStripMenuItem,
             this.ripristinaZoomPredefinitoToolStripMenuItem});
             this.zoomToolStripMenuItem.Name = "zoomToolStripMenuItem";
-            this.zoomToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.zoomToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.zoomToolStripMenuItem.Text = "&Zoom";
             // 
             // zoomavantiToolStripMenuItem
@@ -444,7 +444,7 @@
             this.barraDistatoToolStripMenuItem.CheckOnClick = true;
             this.barraDistatoToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.barraDistatoToolStripMenuItem.Name = "barraDistatoToolStripMenuItem";
-            this.barraDistatoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.barraDistatoToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.barraDistatoToolStripMenuItem.Text = "Barra di &stato";
             this.barraDistatoToolStripMenuItem.Click += new System.EventHandler(this.barraDistatoToolStripMenuItem_Click);
             // 
@@ -532,7 +532,7 @@
             this.toolStripStatusLabelLineColumn.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
             this.toolStripStatusLabelLineColumn.Name = "toolStripStatusLabelLineColumn";
             this.toolStripStatusLabelLineColumn.Size = new System.Drawing.Size(150, 17);
-            this.toolStripStatusLabelLineColumn.Text = "(linea,colonna)";
+            this.toolStripStatusLabelLineColumn.Text = "Linea 1, colonna 1";
             this.toolStripStatusLabelLineColumn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // rtbMain
