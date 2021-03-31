@@ -26,6 +26,19 @@ namespace NotepadFormProject
         const string LIN = "Unix (LF)";
         string lineTerminator = "";
 
+        Encoding systemEncoding = Encoding.UTF8;
+        private Encoding _currentEncoding;
+        public Encoding currentEncoding
+        {
+            get => _currentEncoding;
+            set
+            {
+                _currentEncoding = value;
+                toolStripStatusLabelEncoding.Text = _currentEncoding.BodyName.ToUpper();
+            }
+        }
+
+
         #endregion
 
         #region Form Constructor and Events
@@ -172,6 +185,11 @@ namespace NotepadFormProject
                     else
                     {
                         checkEnvironmentNewline();
+                    }
+                    using (var reader = new StreamReader(this.filePath, systemEncoding, true))
+                    {
+                        reader.Peek();
+                        currentEncoding = reader.CurrentEncoding;
                     }
                     rtbMain.Text = fileText;
                     this.savedContent = rtbMain.Text;
@@ -450,6 +468,7 @@ namespace NotepadFormProject
             this.rtbMain.Text = "";
             this.setFormTitle();
             checkEnvironmentNewline();
+            currentEncoding = systemEncoding;
         }
 
         private void checkEnvironmentNewline()
